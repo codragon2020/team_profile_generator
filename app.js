@@ -147,7 +147,54 @@ function compileTeam() {
         <title>${finalTeamArray[0]}</title>
         
     </head>
+    <body>
+    <div class="banner-bar">
+        <h1>${finalTeamArray[0]}</h1>
+    </div>
+    <div class="card-container">
     `
+    htmlArray.push(htmlBeginning);
+
+    for (let i = 1; i < finalTeamArray.length; i++) {
+        let object = `
+        <div class="member-card">
+            <div class="card-top">
+                <h2>${finalTeamArray[i].name}</h2>
+                <h2>${finalTeamArray[i].title}</h2>
+            </div>
+            <div class="card-bottom">
+                <p>Employee ID: ${finalTeamArray[i].id}</p>
+                <p>Email: <a href="mailto:${finalTeamArray[i].email}">${finalTeamArray[i].email}</a>></p>
+        `
+        if (finalTeamArray[i].officeNumber) {
+            object += `
+            <p>${finalTeamArray[i].officeNumber}</p>
+            `
+        }
+        if (finalTeamArray[i].github) {
+            object += `
+            <p>GitHub: <a href="https://github.com/${finalTeamArray[i].github}">${finalTeamArray[i].github}</a></p>
+            `
+        }
+        if (finalTeamArray[i].school) {
+            object += `
+            <p>School: ${finalTeamArray[i].school}</p>
+            `
+        }
+        object += `
+        </div>
+        </div>
+        `
+        htmlArray.push(object)
+    }
+
+    const htmlEnd = `
+    </div>
+    </body>
+    </html>
+    `
+    htmlArray.push(htmlEnd);
+
     fs.writeFile(`./generated-html/${finalTeamArray[0]}.html`, htmlArray.join(""), function (err) {
             
     })
