@@ -25,17 +25,17 @@ function startingPrompt() {
 function addManager() {
     inquirer.prompt([
         {
-            message: "What is your team manager's name?",
+            message: "What is the team manager's name?",
             name: "name"
         },
         {
-            message: "What is your team manager's email address?",
+            message: "What is the team manager's email address?",
             name: "email"
         },
 
         {
             type: "number",
-            message: "What is your team manager's office number?",
+            message: "What is the team manager's office number?",
             name: "officeNumber"
         },
     ])
@@ -81,15 +81,15 @@ function addTeamMembers() {
 function addEngineer() {
     inquirer.prompt([
         {
-            message: "What is this engineer's name?",
+            message: "What is the engineer's name?",
             name: "name"
         },
         {
-            message: "What is this engineer's email address?",
+            message: "What is the engineer's email address?",
             name: "email"
         },
         {
-            message: "What is this engineer's Github profile?",
+            message: "What is the engineer's Github profile?",
             name: "github"
         }
     ])
@@ -102,9 +102,55 @@ function addEngineer() {
             const teamMember = new Engineer(name, id, email, github)
             finalTeamArray.push(teamMember)
             addTeamMembers()
-            console.log('Team Array ', finalTeamArray)
         });
 };
 
+function addIntern() {
+    inquirer.prompt([
+        {
+            message: "What is the intern's name?",
+            name: "name"
+        },
+        {
+            message: "What is the intern's email address?",
+            name: "email"
+        },
+        {
+            message: "What is the intern's school?",
+            name: "school"
+        }
+    ])
+
+        .then(function (data) {
+            const name = data.name
+            const id = finalTeamArray.length + 1
+            const email = data.email
+            const school = data.school
+            const teamMember = new Intern(name, id, email, school)
+            finalTeamArray.push(teamMember)
+            addTeamMembers()
+        });
+};
+
+function compileTeam() {
+    console.log("Your team is complete!")
+
+    const htmlArray = []
+    const htmlBeginning = `
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>${finalTeamArray[0]}</title>
+        
+    </head>
+    `
+    fs.writeFile(`./generated-html/${finalTeamArray[0]}.html`, htmlArray.join(""), function (err) {
+            
+    })
+}
 
 startingPrompt();
