@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const style = require("./styling/css")
 
-const Employee = require("./lib/employee")
+// const Employee = require("./lib/employee")
 const Engineer = require("./lib/engineer")
 const Manager = require("./lib/manager")
 const Intern = require("./lib/intern")
@@ -72,7 +72,6 @@ function addTeamMembers() {
                 case "Yes, add an engineer":
                     addEngineer();
                     break;
-
                 case "Yes, add an intern":
                     addIntern();
                     break;
@@ -185,7 +184,7 @@ function compileTeam() {
         `
         if (finalTeamArray[i].officeNumber) {
             object += `
-            <p>${finalTeamArray[i].officeNumber}</p>
+            <p>Office #: ${finalTeamArray[i].officeNumber}</p>
             `
         }
         if (finalTeamArray[i].github) {
