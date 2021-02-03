@@ -11,7 +11,7 @@ body {
 }
 
 .banner-bar {
-    background-color: rgba(53, 124, 109, 0.842);
+    background-color: rgb(0, 0, 102);
     width: 100%;
     color: #ffffff;
     display: flex;
@@ -34,17 +34,24 @@ p {
 h2 {
     font-family: 'Roboto Condensed', sans-serif;
     position: relative;
+    font-size: 24px;
+    left: 12px;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
     font-size: 17px;
     left: 12px;
 }
 
 .member-card {
     width: 250px;
-    height: 34vh;
     margin-bottom: 5vh;
     background-color: rgb(240, 238, 238);
     box-shadow: 2px 5px 5px black;
-    border-top-left-radius: 10px;
+    border-top-radius: 10px;
 }
 
 .card-container {
@@ -57,8 +64,8 @@ h2 {
 }
 
 .card-top {
-    background-color: rgb(228, 174, 76);
-    border: 2px solid rgb(228, 174, 76);
+    background-color: rgb(153, 0, 0);
+    border: 2px solid rgb(153, 0, 0);
     width: 246px;
     border-top-left-radius: 10px;
 }

@@ -177,7 +177,7 @@ function compileTeam() {
         <div class="member-card">
             <div class="card-top">
                 <h2>${finalTeamArray[i].name}</h2>
-                <h2>${finalTeamArray[i].title}</h2>
+                <h3>${finalTeamArray[i].title}</h3>
             </div>
             <div class="card-bottom">
                 <p>Employee ID: ${finalTeamArray[i].id}</p>
