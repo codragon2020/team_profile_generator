@@ -16,6 +16,7 @@
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
+  - [Screenshots](#screenshots)
 
   ## Installation
   💾 npm i inquirer
@@ -44,3 +45,6 @@
 
   _This README was generated with ❤️ by [README-generator](https://github.com/codragon2020/readme_generator) 🔥🔥🔥_
 
+## Screenshots
+
+![Generated HTML](./images/html_screenshot.png)
