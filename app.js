@@ -177,25 +177,42 @@ function compileTeam() {
         <div class="member-card">
             <div class="card-top">
                 <h2>${finalTeamArray[i].name}</h2>
-                <h3><i class="fas fa-code-branch"></i> ${finalTeamArray[i].title} <i class="fas fa-code-branch"></i></h3>
-            </div>
+                `
+                if(finalTeamArray[i].title === "Manager") {
+                    object += `
+                    <h3>${finalTeamArray[i].title} <i class="fas fa-coffee"></i></h3>
+                    `
+                }
+                if(finalTeamArray[i].title === "Engineer") {
+                    object += `
+                    <h3>${finalTeamArray[i].title} <i class="fas fa-code-branch"></i></h3>
+                    `
+                }
+                if (finalTeamArray[i].title === "Intern") {
+                    object += `
+                    <h3>${finalTeamArray[i].title} <i class="fas fa-user-graduate"></i></h3>
+                    `
+                }
+                object += `
+                </div>
+                
             <div class="card-bottom">
-                <p>Employee ID: ${finalTeamArray[i].id}</p>
-                <p>Email: <a href="mailto:${finalTeamArray[i].email}">${finalTeamArray[i].email}</a></p>
+                <p><i class="far fa-id-badge"></i> Employee ID: ${finalTeamArray[i].id}</p>
+                <p><i class="far fa-envelope"></i> Email: <a href="mailto:${finalTeamArray[i].email}">${finalTeamArray[i].email}</a></p>
         `
         if (finalTeamArray[i].officeNumber) {
             object += `
-            <p>Office #: ${finalTeamArray[i].officeNumber}</p>
+            <p><i class="far fa-building"></i> Office #: ${finalTeamArray[i].officeNumber}</p>
             `
         }
         if (finalTeamArray[i].github) {
             object += `
-            <p>GitHub: <a href="https://github.com/${finalTeamArray[i].github}" target="_blank" >${finalTeamArray[i].github} </a></p>
+            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/${finalTeamArray[i].github}" target="_blank" >${finalTeamArray[i].github} </a></p>
             `
         }
         if (finalTeamArray[i].school) {
             object += `
-            <p>School: ${finalTeamArray[i].school}</p>
+            <p><i class="fas fa-school"></i> School: ${finalTeamArray[i].school}</p>
             `
         }
         object += `
