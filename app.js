@@ -158,6 +158,7 @@ function compileTeam() {
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>${finalTeamArray[0]}</title>
         <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <style>
         ${style}
         </style>
@@ -176,7 +177,7 @@ function compileTeam() {
         <div class="member-card">
             <div class="card-top">
                 <h2>${finalTeamArray[i].name}</h2>
-                <h3>${finalTeamArray[i].title}</h3>
+                <h3><i class="fas fa-code-branch"></i> ${finalTeamArray[i].title} <i class="fas fa-code-branch"></i></h3>
             </div>
             <div class="card-bottom">
                 <p>Employee ID: ${finalTeamArray[i].id}</p>
