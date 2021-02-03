@@ -229,7 +229,7 @@ function compileTeam() {
     `
     htmlArray.push(htmlEnd);
 
-    fs.writeFile(`./generated-html/${finalTeamArray[0]}.html`, htmlArray.join(""), function (err) {
+    fs.writeFile(`./dist/${finalTeamArray[0]}.html`, htmlArray.join(""), function (err) {
             
     })
 }
