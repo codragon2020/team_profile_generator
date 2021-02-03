@@ -30,6 +30,10 @@ function addManager() {
             name: "name"
         },
         {
+            message: "What is the team manager's employee ID?",
+            name: "id"
+        },
+        {
             message: "What is the team manager's email address?",
             name: "email"
         },
@@ -43,7 +47,7 @@ function addManager() {
 
         .then(function (data) {
             const name = data.name
-            const id = 1
+            const id = data.id
             const email = data.email
             const officeNumber = data.officeNumber
             const teamMember = new Manager(name, id, email, officeNumber)
@@ -86,6 +90,10 @@ function addEngineer() {
             name: "name"
         },
         {
+            message: "What is the engineer's employee ID?",
+            name: "id"
+        },
+        {
             message: "What is the engineer's email address?",
             name: "email"
         },
@@ -97,7 +105,7 @@ function addEngineer() {
 
         .then(function (data) {
             const name = data.name
-            const id = finalTeamArray.length + 1
+            const id = data.id
             const email = data.email
             const github = data.github
             const teamMember = new Engineer(name, id, email, github)
@@ -113,6 +121,10 @@ function addIntern() {
             name: "name"
         },
         {
+            message: "What is the intern's employee ID?",
+            name: "id"
+        },
+        {
             message: "What is the intern's email address?",
             name: "email"
         },
@@ -124,7 +136,7 @@ function addIntern() {
 
         .then(function (data) {
             const name = data.name
-            const id = finalTeamArray.length + 1
+            const id = data.id
             const email = data.email
             const school = data.school
             const teamMember = new Intern(name, id, email, school)
@@ -169,7 +181,7 @@ function compileTeam() {
             </div>
             <div class="card-bottom">
                 <p>Employee ID: ${finalTeamArray[i].id}</p>
-                <p>Email: <a href="mailto:${finalTeamArray[i].email}">${finalTeamArray[i].email}</a>></p>
+                <p>Email: <a href="mailto:${finalTeamArray[i].email}">${finalTeamArray[i].email}</a></p>
         `
         if (finalTeamArray[i].officeNumber) {
             object += `
@@ -178,7 +190,7 @@ function compileTeam() {
         }
         if (finalTeamArray[i].github) {
             object += `
-            <p>GitHub: <a href="https://github.com/${finalTeamArray[i].github}">${finalTeamArray[i].github}</a></p>
+            <p>GitHub: <a href="https://github.com/${finalTeamArray[i].github}" target="_blank" >${finalTeamArray[i].github} </a></p>
             `
         }
         if (finalTeamArray[i].school) {
