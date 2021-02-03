@@ -51,7 +51,7 @@ h3 {
     margin-bottom: 5vh;
     background-color: rgb(240, 238, 238);
     box-shadow: 2px 5px 5px black;
-    border-top-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .card-container {
